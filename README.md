@@ -4,11 +4,11 @@ These are some PowerShell scripts that I made and use with RMM tools. Some are C
 
 ## Application Install
 
-See [InstallationMethods.md](./Application%20Install/InstallationMethods.md)
+See [InstallationMethods.md](./Application%20Install/README.md)
 
 ## Bloatware Removal
 
-See [DebloatInformation.md](./Bloatware%20Removal/DebloatInformation.md)
+See [DebloatInformation.md](./Bloatware%20Removal/README.md)
 
 ## Management
 
