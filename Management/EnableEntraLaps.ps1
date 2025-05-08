@@ -82,7 +82,7 @@ Function Invoke-RegistryCheckAndSet {
 $hr = "--------------------"
 
 # Read-Host -Prompt "Ensure you are running the script as an Administrator. Press any key to run."
-Write-Host "`nSEnabling Entra LAPS via Local Group Policy"
+Write-Host "`nEnabling Entra LAPS via Local Group Policy"
 
 
 Write-Host "`nSetting Backup Directory to Entra`n$hr"
