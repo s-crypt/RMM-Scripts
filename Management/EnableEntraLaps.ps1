@@ -13,6 +13,10 @@ $Passphrase = 1
 $PassphraseLength = 6
 # If Passphrase is set to false, set the character length of the password from 8-64
 $PasswordLength = 14
+# Set the Post Autentication Action to be preformed after the LAPS account has been logged in on Win11 24H2+ and Win Server 2022+. https://learn.microsoft.com/en-us/windows-server/identity/laps/laps-management-policy-settings#postauthenticationactions
+$PostAuthAct = 1
+# Set the delay in hours (0-24) for the Post Authentication Action. Set to 0 to disable the action. https://learn.microsoft.com/en-us/windows-server/identity/laps/laps-management-policy-settings#postauthenticationactions
+$PostAuthDelay = 0
 
 # Enable Automatic Account Management? Settings below are irrelevent if not enabled
 $AAM = 0
@@ -127,3 +131,9 @@ if ($Passphrase -eq 0) {
 
 Write-Host "`nSetting managed local account password max age to $PasswordAge`n$hr"
 Invoke-RegistryCheckAndSet -Path 'HKLM:\Software\Microsoft\Policies\LAPS' -Property 'PasswordAgeDays' -Type DWord -Value $PasswordAge
+
+Write-Host "`nSetting Post Authentication Delay to $PostAuthDelay"
+Invoke-RegistryCheckAndSet -Path 'HKLM:\Software\Microsoft\Policies\LAPS' -Property 'PostAuthenticationResetDelay' -Type DWord -Value $PostAuthDelay
+
+Write-Host "`nSetting Post Authentication Action to $PostAuthAct"
+Invoke-RegistryCheckAndSet -Path 'HKLM:\Software\Microsoft\Policies\LAPS' -Property 'PostAuthenticationActions' -Type DWord -Value $PostAuthAct
