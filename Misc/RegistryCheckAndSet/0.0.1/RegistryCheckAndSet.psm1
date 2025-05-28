@@ -3,7 +3,7 @@
   Sets/updates a registry value/key, and creates it if does not exist.
 
  .DESCRIPTION
-  Check if a registry key and/or property exists, create the key/property if it does not, and update it to the correct value.
+  Check if a registry key and/or value exists, create the key/proerpty if it does not, and update it to the correct value.
 
  .PARAMETER Path
   The path of the registry property, like 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power'
@@ -20,16 +20,16 @@
   enclosed in square brackets.
 
  .EXAMPLE
-   # Set the registry value to disable Fast Boot
-   Invoke-RegistryCheckAndSet -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power' -Property 'HiberbootEnabled' -Type DWord -Value 0
+  # Set the registry value to disable Fast Boot
+  Invoke-RegistryCheckAndSet -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power' -Property 'HiberbootEnabled' -Type DWord -Value 0
 
  .EXAMPLE
-   # Set registry value to disable Search Highlights
-   Invoke-RegistryCheckAndSet -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search' -Property 'EnableDynamicContentInWSB' -Type DWord -Value 0
+  # Set registry value to disable Search Highlights
+  Invoke-RegistryCheckAndSet -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search' -Property 'EnableDynamicContentInWSB' -Type DWord -Value 0
 
  .EXAMPLE
-   # Set registry value to disable Recall
-   Invoke-RegistryCheckAndSet 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI' -Property 'DisableAIDataAnalysis' -Type DWord -Value 1
+  # Set registry value to disable Recall
+  Invoke-RegistryCheckAndSet 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI' -Property 'DisableAIDataAnalysis' -Type DWord -Value 1
 #>
 Function Invoke-RegistryCheckAndSet {
     param(

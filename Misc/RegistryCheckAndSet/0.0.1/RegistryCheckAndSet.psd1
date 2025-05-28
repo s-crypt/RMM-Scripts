@@ -16,7 +16,7 @@
     Author = 's-crypt'
     
     # Company or vendor of this module
-    CompanyName = 'Unknown'
+    CompanyName = ''
     
     # Copyright statement for this module
     Copyright = '(c) s-crypt. All rights reserved.'
